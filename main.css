@@ -1,0 +1,60 @@
+/* Palette Reference: https://www.color-hex.com/color-palette/67443 */
+
+@import url('https://fonts.googleapis.com/css?family=Carme|Nova+Mono');
+
+body {
+    font-family: 'Carme', sans-serif;
+    background: 	#b84848;
+    padding: 0;
+    /* margin: 0; */
+}
+#app {
+    color: rgb(240, 240, 240);
+    text-align: center;
+    /* border: 1px solid blue; */
+    width: 90%;
+    max-width: 700px;
+    margin: 10% auto 0 auto;
+}
+
+#app #timer {
+    color: rgb(240, 240, 240);
+    margin-top: 0;
+    font-family: 'Nova Mono', monospace;
+    line-height: 1;
+    font-size: 10em;
+}
+
+button {
+    background-color: rgb(44, 44, 44);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border-style: none;
+    /* box-shadow: 4px 4px 4px; */
+    font-family: 'Carme', sans-serif;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    color: #aaa;
+}
+
+button:enabled:hover {
+    background-color: rgb(92, 92, 92);
+    color: white;
+}
+
+.btn-group {
+    display: block;
+}
+
+::selection {
+    background-color: #d46767;
+    color: white;
+}
+
+::-moz-selection {
+    background-color: #d46767;
+    color: white;
+}
