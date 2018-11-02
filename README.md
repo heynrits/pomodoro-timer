@@ -7,4 +7,5 @@ A simple timer app for use with [Pomodoro Technique](https://francescocirillo.co
 - 5-minute timer (short break)
 - 20-minute timer (long break)
 
-
+## Demo
+Try the app [here](https://heynrits.github.io/pomodoro-timer/).
