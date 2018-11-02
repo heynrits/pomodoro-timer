@@ -2,6 +2,11 @@
 let minutesPlaceholder = document.querySelector('#minute');
 let secondsPlaceholder = document.querySelector('#second');
 
+// Timer Type Buttons
+let btnPomodoro = document.querySelector('#btnPomodoro');
+let btnShortBreak = document.querySelector('#btnShortBreak');
+let btnLongBreak = document.querySelector('#btnLongBreak');
+
 // Control Buttons
 let btnStart = document.querySelector('#start');
 let btnStop = document.querySelector('#stop');
@@ -14,6 +19,12 @@ isTimerRunning = false;
 let pomodoro = 25 * 60; // 25 mins
 let shortBreak = 5 * 60; // 5 mins
 let longBreak = 20 * 60; // 20 mins
+
+let timerModes = {
+    "pomodoro": pomodoro,
+    "shortBreak": shortBreak,
+    "longBreak": longBreak
+};
 
 // Currently set timer
 let timerSet = pomodoro;
@@ -29,6 +40,7 @@ updateView([time.inMinutes, time.inSeconds], [minutesPlaceholder, secondsPlaceho
  * Buttons Event Listeners
  */
 
+// CONTROLS BUTTONS
 // Start button
 btnStart.addEventListener('click', function() {
     if (!isTimerRunning) {
@@ -65,6 +77,16 @@ btnReset.addEventListener('click', function() {
     }
 });
 
+// TIMER MODE RADIO BUTTONS
+// To change timer modes
+let radios = document.querySelectorAll('input[type=radio]');
+
+radios.forEach(function(radio) {
+    radio.addEventListener('click', function() {
+        setMode(radio.value);
+    });
+});
+
 /**
  * Functions
  */
@@ -79,6 +101,20 @@ function updateView(timeArr = [], placeholderElements = []) {
     }
     // placeholderElements[0].textContent = timeArr[0];
     // placeholderElements[1].textContent = timeArr[1];
+}
+
+function setMode(mode = 'pomodoro') {
+    timerSet = timerModes[mode];
+    resetReference = timerSet;
+
+    isTimerRunning = false;
+
+    btnReset.disabled = true;
+    btnStop.disabled = true;
+    btnStart.disabled = false;
+    clearInterval(intervalId);
+    let parsedTime = parseTime(resetReference);
+    updateView([parsedTime.inMinutes, parsedTime.inSeconds], [minutesPlaceholder, secondsPlaceholder]);
 }
 
 // Extracts minutes and seconds values from a given time in seconds

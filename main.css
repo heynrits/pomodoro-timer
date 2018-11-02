@@ -25,7 +25,7 @@ body {
     font-size: 10em;
 }
 
-button {
+.btn-ctrl {
     background-color: rgb(44, 44, 44);
     color: white;
     padding: 10px 20px;
@@ -33,20 +33,34 @@ button {
     border-style: none;
     /* box-shadow: 4px 4px 4px; */
     font-family: 'Carme', sans-serif;
+    font-weight: bold;
 }
 
-button:disabled {
+.btn-ctrl:disabled {
     cursor: not-allowed;
     color: #aaa;
 }
 
-button:enabled:hover {
+.btn-ctrl:enabled:hover {
     background-color: rgb(92, 92, 92);
     color: white;
 }
 
+.timer-mode {
+    display: inline-block;
+    background-color: rgb(44, 44, 44);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
 .btn-group {
-    display: block;
+    font-weight: bold;
+    /* display: block; */
+    margin: 30px 0;
+}
+
+input[type=radio] {
+    margin-left: 15px;
 }
 
 ::selection {

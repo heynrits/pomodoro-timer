@@ -10,14 +10,27 @@
 <body>
     <div id="app">
         <h1>Pomodoro Timer</h1>
+
+        <div class="btn-group timer-mode">
+                <span>MODE: </span>
+                <input type="radio" name="timerType" id="rdPomodoro" value="pomodoro" checked="checked">
+                <label for="rdPomodoro">POMODORO</label>
+                <input type="radio" name="timerType" id="rdShortBreak" value="shortBreak">
+                <label for="rdShortBreak">SHORT BREAK</label>
+                <input type="radio" name="timerType" id="rdLongBreak" value="longBreak">
+                <label for="rdLongBreak">LONG BREAK</label>
+            </div>
+
         <h1 id="timer">
             <span id="minute">--</span>:<span id="second">--</span>
         </h1>
+        
         <div class="btn-group">
-            <button id="start">START</button>
-            <button id="stop" disabled="disabled">STOP</button>
-            <button id="reset" disabled="disabled">RESET</button>
-            <button id="settings">SETTINGS</button>
+            <button class="btn-ctrl" id="start">START</button>
+            <button class="btn-ctrl" id="stop" disabled="disabled">STOP</button>
+            <button class="btn-ctrl" id="reset" disabled="disabled">RESET</button>
+            <button class="btn-ctrl" id="settings">SETTINGS</button>
+            <!-- <button class="btn-ctrl" id="about">ABOUT</button> -->
         </div>
     </div>
     <script src="index.js"></script>
