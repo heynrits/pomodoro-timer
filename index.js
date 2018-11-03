@@ -101,6 +101,14 @@ function updateView(timeArr = [], placeholderElements = []) {
     }
     // placeholderElements[0].textContent = timeArr[0];
     // placeholderElements[1].textContent = timeArr[1];
+    if (isTimerRunning)
+            updateTitle("Pomodoro Timer \267 " + timeArr[0] + ":" + timeArr[1]);
+        else
+            updateTitle('Pomodoro Timer');
+}
+
+function updateTitle(newTitle) {
+    document.title = newTitle;
 }
 
 function setMode(mode = 'pomodoro') {
